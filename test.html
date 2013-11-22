@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<script type="text/javascript" src="array.extend.js"></script> 
+	<style>
+		.code-s {border: 1px solid #dfdfdf;background-color: rgba(100,200,100,0.1);padding: 10px;}
+	</style>
+  </head>
+  <body>
+<div id='log'></div>
+
+<script type="text/javascript">
+//<!--
+var o = document.getElementById('log');
+var html = "";
+
+var a = Array();
+a.push('a');
+a.push('b');
+a.push('c');
+
+html+="<p><b>Crete empty array</b><br/><div class='code-s'>var a = Array()</div></p>";
+html+="<p><b>Push variables</b><br/><div class='code-s'>a.push('a');<br/>a.push('b');<br/>a.push('c');<br/></div></p>";
+html+="<p><b>Test</b><div class='code-s'>console.log(a.have('d')); // "+a.have('d')+"<br/>console.log(a.have('B')); // "+a.have('B')+"<br/>console.log(a.have('c')); // "+a.have('c')+" </div></p>";
+
+a.push(1);
+a.push(2);
+a.push({a:1,b:[0,1,2,3,4,5]});
+a.push([0,1,2,3,4,5]);
+
+html+="<p><b>Push variables</b><br/><div class='code-s'>a.push(1);<br/>a.push(2);<br/>a.push({a:1,b:[0,1,2,3,4,5]});<br/>a.push([0,1,2,3,4,5]);<br/></div></p>";
+html+="<p><b>Show array data</b><br/><div class='code-s'>console.log(a); // [\"a\", \"b\", \"c\", 1, 2, Object, Array[6], clear: function, have: function]</div></p>";
+
+
+html+="<p><b>Clear array</b><br/><div class='code-s'>a.clear();<br/></div></p>";
+a.clear();
+html+="<p><b>Show array data</b><br/><div class='code-s'>console.log(a); // [clear: function, have: function]</div></p>";
+
+html+="<p><b>Full clear array</b><br/><div class='code-s'>a=a.clear();<br/></div></p>";
+a=a.clear();
+html+="<p><b>Show array data</b><br/><div class='code-s'>console.log(a); // null</div></p>";
+
+o.innerHTML=html;
+
+//-->
+</script>
+
+
+  </body>
+</html>
